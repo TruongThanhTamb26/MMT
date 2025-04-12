@@ -1,5 +1,5 @@
 {
-  "name": "Truong_Thanh_Tam.pdf",
+  "name": "CV",
   "piece_length": 524288,
   "piece_count": 1,
   "files": [
@@ -8,9 +8,9 @@
       "length": 449872
     }
   ],
-  "tracker": "http://10.28.128.187:8000",
+  "tracker": "http://192.168.110.35:8000",
   "pieces": [
     "f1eed1b48812022651420d1512d44fca891218f5"
   ],
-  "info_hash": "fefc072bfa631bb6ded499daa46f919437667d56"
+  "info_hash": "10db3ac797a56a3d7c904a752f71f02cf3a5f714"
 }

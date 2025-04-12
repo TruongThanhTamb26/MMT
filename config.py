@@ -8,7 +8,7 @@ Không cần sửa code trong các file khác.
 # Địa chỉ IP máy đang chạy tracker server
 # Trong môi trường thực tế, đây là địa chỉ IP public hoặc domain name
 # Khi chạy trên cùng một máy, có thể để là localhost
-TRACKER_HOST = "10.28.128.187"  # Thay đổi IP này thành địa chỉ IP của máy bạn trên mạng LAN
+TRACKER_HOST = "10.28.128.187"  # Địa chỉ IP của máy chủ tracker
 
 # Cổng của tracker server
 TRACKER_PORT = 8000

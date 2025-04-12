@@ -401,25 +401,56 @@ class ConnectionManager:
     
     def _connection_loop(self):
         """Main loop for managing peer connections"""
+        retry_counter = {}  # Đếm số lần thử lại kết nối
+        
         while self.running:
             with self.lock:
                 # Try to connect to peers that aren't connected
                 for peer_id, peer in self.peers.items():
                     if not peer['connected'] and peer['handler']:
+                        # Kiểm tra số lần thử kết nối
+                        if peer_id not in retry_counter:
+                            retry_counter[peer_id] = 0
+                        
+                        # Nếu đã thử quá nhiều lần, tạm thời bỏ qua peer này
+                        if retry_counter[peer_id] >= 3:
+                            if time.time() - peer.get('last_retry', 0) < 60:  # Đợi 1 phút trước khi thử lại
+                                continue
+                            else:
+                                # Reset bộ đếm sau thời gian chờ
+                                retry_counter[peer_id] = 0
+                        
                         try:
+                            logging.info(f"Thử kết nối đến peer {peer_id} (IP: {peer['info'].get('ip')}:{peer['info'].get('port')})")
                             peer['handler'].connect()
                             peer['connected'] = True
-                            logging.info(f"Connected to peer {peer_id}")
+                            retry_counter[peer_id] = 0  # Reset counter on success
+                            logging.info(f"Đã kết nối thành công đến peer {peer_id}")
+                        except ConnectionError as e:
+                            retry_counter[peer_id] += 1
+                            peer['last_retry'] = time.time()
+                            logging.error(f"Lỗi kết nối đến peer {peer_id}: {e}")
                         except Exception as e:
-                            logging.error(f"Failed to connect to peer {peer_id}: {e}")
+                            retry_counter[peer_id] += 1
+                            peer['last_retry'] = time.time()
+                            logging.error(f"Lỗi không xác định khi kết nối đến peer {peer_id}: {e}")
                 
                 # Check for dead connections
                 now = time.time()
                 for peer_id, peer in list(self.peers.items()):
-                    if peer['connected'] and now - peer['last_seen'] > 120:  # 2 min timeout
-                        logging.info(f"Peer {peer_id} timed out")
-                        peer['handler'].close()
-                        peer['connected'] = False
+                    # Nếu kết nối đã được thiết lập nhưng đã lâu không có hoạt động
+                    if peer['connected'] and peer['handler']:
+                        if now - peer['handler'].last_activity > 120:  # 2 phút timeout
+                            logging.info(f"Peer {peer_id} không hoạt động, đóng kết nối")
+                            peer['handler'].close()
+                            peer['connected'] = False
+                            
+                            # Đặt lại bộ đếm, để có thể thử kết nối lại
+                            retry_counter[peer_id] = 0
+                    
+                    # Cập nhật thời gian last_seen
+                    if peer['connected'] and peer['handler']:
+                        peer['last_seen'] = peer['handler'].last_activity
             
             # Sleep before next check
             time.sleep(5)
@@ -660,32 +691,47 @@ class PeerConnection:
         pstr = "BitTorrent protocol"
         reserved = b'\x00' * 8
         
+        # Chuyển đổi info_hash từ hex string sang bytes nếu cần
+        info_hash_bytes = bytes.fromhex(self.info_hash) if isinstance(self.info_hash, str) else self.info_hash
+        
+        # Chuyển đổi peer_id sang bytes nếu cần
+        peer_id_bytes = self.our_peer_id.encode() if isinstance(self.our_peer_id, str) else self.our_peer_id
+        
         # Construct handshake message
         handshake = bytes([len(pstr)]) + \
                     pstr.encode() + \
                     reserved + \
-                    bytes.fromhex(self.info_hash) + \
-                    self.our_peer_id.encode()
+                    info_hash_bytes + \
+                    peer_id_bytes
                     
         logging.debug(f"Sending handshake to {self.ip}:{self.port}")
         # Send handshake
         self.socket.sendall(handshake)
         
-        # Receive and parse peer's handshake
-        response = self._read_exactly(len(handshake))
-        if not response:
-            raise ConnectionError("Peer did not respond with handshake")
-        
-        logging.debug(f"Received handshake from {self.ip}:{self.port}")
+        try:
+            # Receive and parse peer's handshake
+            response = self._read_exactly(len(handshake))
+            if not response:
+                raise ConnectionError("Peer did not respond with handshake")
             
-        # Validate response contains correct info_hash
-        resp_info_hash = response[28:48].hex()
-        if resp_info_hash != self.info_hash:
-            raise ValueError(f"Peer responded with wrong info_hash: {resp_info_hash}")
-            
-        # Extract peer_id from response
-        resp_peer_id = response[48:68].decode()
-        return resp_peer_id
+            logging.debug(f"Received handshake from {self.ip}:{self.port}")
+                
+            # Validate response contains correct info_hash
+            resp_info_hash = response[28:48].hex()
+            if resp_info_hash != (self.info_hash if isinstance(self.info_hash, str) else self.info_hash.hex()):
+                raise ValueError(f"Peer responded with wrong info_hash: {resp_info_hash}")
+                
+            # Extract peer_id from response
+            resp_peer_id = response[48:68]
+            # Chuyển peer_id sang string để dễ so sánh và sử dụng
+            resp_peer_id_str = resp_peer_id.decode(errors='replace')
+            return resp_peer_id_str
+        except socket.timeout:
+            raise ConnectionError("Handshake timed out")
+        except UnicodeDecodeError:
+            # Xử lý trường hợp peer_id không thể decode
+            logging.warning(f"Could not decode peer_id, using hex representation instead")
+            return response[48:68].hex()
     
     def close(self):
         """Close the connection to the peer"""
@@ -812,13 +858,38 @@ class PeerConnection:
         data = b''
         while len(data) < n:
             try:
+                self.socket.settimeout(10)  # Đặt timeout là 10 giây
                 packet = self.socket.recv(n - len(data))
-                if not packet:
+                
+                if not packet:  # Kết nối đã đóng
+                    logging.warning(f"Connection to {self.peer_id} closed when reading data")
                     return None
+                    
                 data += packet
-            except Exception as e:
-                logging.error(f"Error reading from socket: {e}")
+                
+            except socket.timeout:
+                # Xử lý timeout - có thể thử lại một lần nữa
+                logging.warning(f"Socket timeout when reading from {self.peer_id}, retrying...")
+                try:
+                    # Thử lại thêm một lần với timeout dài hơn
+                    self.socket.settimeout(15)
+                    packet = self.socket.recv(n - len(data))
+                    if packet:
+                        data += packet
+                    else:
+                        return None
+                except Exception:
+                    # Nếu vẫn thất bại, đầu hàng
+                    return None
+                    
+            except ConnectionResetError:
+                logging.error(f"Connection reset by peer {self.peer_id}")
                 return None
+                
+            except Exception as e:
+                logging.error(f"Error reading from socket ({self.peer_id}): {e}")
+                return None
+                
         return data
 
     def _request_loop(self):
