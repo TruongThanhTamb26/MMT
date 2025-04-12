@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm Torrent Mới - P2P Client</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+        }
+
+        .form-container {
+            margin-top: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .tab-container {
+            margin-bottom: 20px;
+        }
+
+        .tab-nav {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            color: #7f8c8d;
+        }
+
+        .tab-btn.active {
+            color: #3498db;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .tab-content {
+            padding: 20px 0;
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        .file-drop-area {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 150px;
+            border: 2px dashed #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+            background-color: #f8f9fa;
+            margin-bottom: 20px;
+        }
+
+        .file-drop-area:hover {
+            border-color: #3498db;
+        }
+
+        .fake-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin-right: 15px;
+        }
+
+        .file-msg {
+            font-size: 16px;
+            color: #7f8c8d;
+        }
+
+        input[type="file"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Quay lại danh sách</a>
+        <h1>Thêm Torrent Mới</h1>
+
+        {% if error %}
+        <div class="alert alert-danger">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <div class="tab-container">
+            <div class="tab-nav">
+                <button class="tab-btn active" data-tab="magnet">Thêm từ Magnet Link</button>
+                <button class="tab-btn" data-tab="upload" disabled>Tạo torrent mới (Đang phát triển)</button>
+            </div>
+
+            <div class="tab-content">
+                <div id="magnet" class="tab-panel active">
+                    <form action="/add" method="POST" class="form-container">
+                        <div class="form-group">
+                            <label for="magnet_url">Magnet URL:</label>
+                            <input type="text" id="magnet_url" name="magnet_url" class="form-control"
+                                placeholder="magnet:?xt=urn:btih:..." required>
+                            <small style="color: #7f8c8d; margin-top: 5px; display: block;">
+                                Nhập magnet link từ tracker của bạn để bắt đầu tải về.
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Thêm Torrent</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="upload" class="tab-panel">
+                    <form action="/create_torrent" method="POST" class="form-container">
+                        <div class="form-group">
+                            <label>Chọn tập tin:</label>
+                            <div class="file-drop-area">
+                                <span class="fake-btn">Chọn tập tin</span>
+                                <span class="file-msg">hoặc kéo thả tập tin vào đây</span>
+                                <input type="file" multiple>
+                            </div>
+                            <div id="file-list"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="torrent_name">Tên Torrent:</label>
+                            <input type="text" id="torrent_name" name="name" class="form-control"
+                                placeholder="Tên torrent">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="piece_size">Kích thước mỗi phần:</label>
+                            <select id="piece_size" name="piece_size" class="form-control">
+                                <option value="16384">16 KB</option>
+                                <option value="65536">64 KB</option>
+                                <option value="262144">256 KB</option>
+                                <option value="524288" selected>512 KB</option>
+                                <option value="1048576">1 MB</option>
+                                <option value="2097152">2 MB</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Tạo Torrent</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Tab switching
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabPanels = document.querySelectorAll('.tab-panel');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    if (this.hasAttribute('disabled')) {
+                        return; // Skip disabled tabs
+                    }
+
+                    // Remove active class from all buttons and panels
+                    tabBtns.forEach(btn => btn.classList.remove('active'));
+                    tabPanels.forEach(panel => panel.classList.remove('active'));
+
+                    // Add active class to current button and panel
+                    this.classList.add('active');
+                    const tab = this.getAttribute('data-tab');
+                    document.getElementById(tab).classList.add('active');
+                });
+            });
+
+            // File uploader
+            const fileInput = document.querySelector('input[type="file"]');
+            const fileMsg = document.querySelector('.file-msg');
+            const fileList = document.getElementById('file-list');
+
+            fileInput.addEventListener('change', function (e) {
+                const files = Array.from(this.files);
+                if (files.length) {
+                    fileMsg.textContent = `Đã chọn ${files.length} tập tin`;
+                    fileList.innerHTML = '';
+
+                    files.forEach(file => {
+                        const fileInfo = document.createElement('div');
+                        fileInfo.textContent = `${file.name} (${formatFileSize(file.size)})`;
+                        fileList.appendChild(fileInfo);
+                    });
+                } else {
+                    fileMsg.textContent = 'hoặc kéo thả tập tin vào đây';
+                    fileList.innerHTML = '';
+                }
+            });
+
+            function formatFileSize(bytes) {
+                if (bytes === 0) return '0 B';
+                const k = 1024;
+                const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            }
+        });
+    </script>
+</body>
+
+</html>

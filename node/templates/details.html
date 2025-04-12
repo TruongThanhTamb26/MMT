@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết Torrent - P2P Client</title>
+    <!-- Thêm Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .torrent-info {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stat-box {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3498db;
+            margin: 10px 0;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #3498db;
+            transition: width 0.3s;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        button,
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+
+        .btn-success {
+            background: #2ecc71;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #27ae60;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+
+        .btn-warning {
+            background: #f39c12;
+            color: white;
+        }
+
+        .btn-warning:hover {
+            background: #d35400;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .status-started {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        .status-paused {
+            background-color: #f39c12;
+            color: white;
+        }
+
+        .status-seeding {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .empty-message {
+            text-align: center;
+            padding: 50px 0;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .files-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .files-list li {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .files-list li:last-child {
+            border-bottom: none;
+        }
+
+        .peer-status {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .peer-choking {
+            background-color: #e74c3c;
+        }
+
+        .peer-interested {
+            background-color: #2ecc71;
+        }
+
+        /* MDDT Chart styling */
+        .mddt-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mddt-chart-container {
+            height: 300px;
+            margin-bottom: 20px;
+        }
+
+        .mddt-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Quay lại danh sách</a>
+
+        <div class="header">
+            <h1>Chi tiết Torrent</h1>
+            <div class="buttons">
+                {% if status.status == 'paused' %}
+                <button class="btn btn-success" onclick="resumeTorrent('{{ info_hash }}')">Tiếp tục</button>
+                {% else %}
+                <button class="btn btn-warning" onclick="pauseTorrent('{{ info_hash }}')">Tạm dừng</button>
+                {% endif %}
+                <button class="btn btn-danger">Xóa Torrent</button>
+            </div>
+        </div>
+
+        <div class="torrent-info">
+            <h2>{{ status.name }}</h2>
+            <p><strong>Info Hash:</strong> {{ info_hash }}</p>
+            <p><strong>Trạng thái:</strong> <span class="status-badge status-{{ status.status }}">{{ status.status
+                    }}</span></p>
+            <div class="progress-text">Tiến độ: {{ status.progress|format_progress }}</div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: {{ status.progress|default(0) }}%;"></div>
+            </div>
+        </div>
+
+        <!-- MDDT Performance Chart -->
+        <div class="mddt-section">
+            <h2>Hiệu suất MDDT (Multi-Direction Data Transferring)</h2>
+            <div class="mddt-chart-container">
+                <canvas id="mddtChart" width="800" height="250"></canvas>
+            </div>
+            <div class="mddt-stats">
+                <div class="stat-box">
+                    <div class="stat-value" id="activeConnections">{{ peers|length if peers else 0 }}</div>
+                    <div class="stat-label">Kết nối đồng thời</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="totalDownloadSpeed">{{ status.download_speed|format_speed }}</div>
+                    <div class="stat-label">Tốc độ tải xuống tổng</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="mddtEfficiency">{{ status.mddt_efficiency|default(0) }}%</div>
+                    <div class="stat-label">Hiệu suất MDDT</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="totalUploadSpeed">{{ status.upload_speed|format_speed }}</div>
+                    <div class="stat-label">Tốc độ tải lên tổng</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-value">{{ status.downloaded|format_size }}</div>
+                <div class="stat-label">Đã tải về</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">{{ status.uploaded|format_size }}</div>
+                <div class="stat-label">Đã tải lên</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">{{ status.left|format_size }}</div>
+                <div class="stat-label">Còn lại</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">{{ status.total_size|format_size }}</div>
+                <div class="stat-label">Tổng kích thước</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">{{ status.connected_peers }}</div>
+                <div class="stat-label">Peer đang kết nối</div>
+            </div>
+        </div>
+
+        <h2>Danh sách File</h2>
+        {% if status.files %}
+        <ul class="files-list">
+            {% for file in status.files %}
+            <li>
+                <span>{{ file.path }}</span>
+                <span>{{ file.length|format_size }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <div class="empty-message">
+            <p>Không có thông tin về các file.</p>
+        </div>
+        {% endif %}
+
+        <h2>Danh sách Peers</h2>
+        {% if peers %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Peer ID</th>
+                    <th>IP:Port</th>
+                    <th>Pieces</th>
+                    <th>Trạng thái</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for peer in peers %}
+                <tr>
+                    <td>{{ peer.peer_id|truncate(12) }}</td>
+                    <td>{{ peer.ip }}:{{ peer.port }}</td>
+                    <td>{{ peer.pieces }}</td>
+                    <td>
+                        <span class="peer-status {{ 'peer-choking' if peer.peer_choking else '' }}"
+                            title="{{ 'Đang chặn' if peer.peer_choking else 'Không chặn' }}"></span>
+                        <span class="peer-status {{ 'peer-interested' if peer.peer_interested else '' }}"
+                            title="{{ 'Đang quan tâm' if peer.peer_interested else 'Không quan tâm' }}"></span>
+                        {{ 'Đang chặn' if peer.peer_choking else 'Không chặn' }} /
+                        {{ 'Quan tâm' if peer.peer_interested else 'Không quan tâm' }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="empty-message">
+            <p>Không có peer nào đang kết nối.</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        // Pause torrent
+        function pauseTorrent(infoHash) {
+            fetch('/api/pause/' + infoHash)
+                .then(response => response.json())
+                .then(data => {
+                    window.location.reload();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Đã xảy ra lỗi khi tạm dừng torrent.');
+                });
+        }
+
+        // Resume torrent
+        function resumeTorrent(infoHash) {
+            fetch('/api/resume/' + infoHash)
+                .then(response => response.json())
+                .then(data => {
+                    window.location.reload();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Đã xảy ra lỗi khi tiếp tục torrent.');
+                });
+        }
+
+        // MDDT Chart
+        let mddtChart;
+        let chartData = {
+            labels: [],
+            speedData: [],
+            peerData: []
+        };
+
+        // Initialize MDDT Performance Chart
+        function initMDDTChart() {
+            const ctx = document.getElementById('mddtChart').getContext('2d');
+
+            // Initialize with 10 empty data points
+            for (let i = 0; i < 10; i++) {
+                chartData.labels.push('');
+                chartData.speedData.push(0);
+                chartData.peerData.push(0);
+            }
+
+            mddtChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: chartData.labels,
+                    datasets: [
+                        {
+                            label: 'Tốc độ tải xuống (KB/s)',
+                            data: chartData.speedData,
+                            borderColor: '#3498db',
+                            backgroundColor: 'rgba(52, 152, 219, 0.2)',
+                            borderWidth: 2,
+                            fill: true,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: 'Số lượng kết nối',
+                            data: chartData.peerData,
+                            borderColor: '#e74c3c',
+                            backgroundColor: 'rgba(231, 76, 60, 0.2)',
+                            borderWidth: 2,
+                            fill: false,
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'Thời gian'
+                            }
+                        },
+                        y: {
+                            display: true,
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'Tốc độ (KB/s)'
+                            },
+                            beginAtZero: true
+                        },
+                        y1: {
+                            display: true,
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: 'Số kết nối'
+                            },
+                            beginAtZero: true,
+                            grid: {
+                                drawOnChartArea: false
+                            }
+                        }
+                    },
+                    animation: {
+                        duration: 750
+                    }
+                }
+            });
+        }
+
+        // Update chart with new data
+        function updateMDDTChart(downloadSpeed, connections) {
+            // Add timestamp
+            const now = new Date();
+            const timeStr = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+
+            // Shift arrays if they are full
+            if (chartData.labels.length >= 10) {
+                chartData.labels.shift();
+                chartData.speedData.shift();
+                chartData.peerData.shift();
+            }
+
+            // Add new data points
+            chartData.labels.push(timeStr);
+            chartData.speedData.push(downloadSpeed);
+            chartData.peerData.push(connections);
+
+            // Update chart
+            mddtChart.update();
+        }
+
+        // Fetch MDDT performance data
+        function fetchMDDTData() {
+            fetch('/api/status?info_hash={{ info_hash }}')
+                .then(response => response.json())
+                .then(data => {
+                    // Update MDDT stats
+                    document.getElementById('activeConnections').innerText = data.connected_peers || 0;
+                    document.getElementById('totalDownloadSpeed').innerText = formatSpeed(data.download_speed || 0);
+                    document.getElementById('totalUploadSpeed').innerText = formatSpeed(data.upload_speed || 0);
+
+                    // Calculate MDDT efficiency
+                    const efficiency = data.connected_peers > 0 ? (data.download_speed / data.connected_peers) * 100 : 0;
+                    document.getElementById('mddtEfficiency').innerText = Math.round(efficiency) + '%';
+
+                    // Update chart
+                    updateMDDTChart(data.download_speed / 1024, data.connected_peers);
+                })
+                .catch(error => console.error('Error fetching MDDT data:', error));
+        }
+
+        // Format speed (bytes/s) to human-readable string
+        function formatSpeed(bytesPerSecond) {
+            if (bytesPerSecond === 0) return '0 B/s';
+
+            const units = ['B/s', 'KB/s', 'MB/s', 'GB/s'];
+            const i = Math.floor(Math.log(bytesPerSecond) / Math.log(1024));
+            return (bytesPerSecond / Math.pow(1024, i)).toFixed(2) + ' ' + units[i];
+        }
+
+        // Initialize chart when page loads
+        window.addEventListener('load', function () {
+            initMDDTChart();
+
+            // Start fetching data and updating chart
+            fetchMDDTData();
+            setInterval(fetchMDDTData, 2000); // Update every 2 seconds
+        });
+
+        // Auto-refresh page every 60 seconds for full reload
+        setTimeout(function () {
+            window.location.reload();
+        }, 60000);
+    </script>
+</body>
+
+</html>

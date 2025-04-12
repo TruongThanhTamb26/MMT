@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2P Client</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .peer-info {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #3498db;
+            transition: width 0.3s;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        button,
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+
+        .btn-success {
+            background: #2ecc71;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #27ae60;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+
+        .btn-warning {
+            background: #f39c12;
+            color: white;
+        }
+
+        .btn-warning:hover {
+            background: #d35400;
+        }
+
+        .add-torrent {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .empty-message {
+            text-align: center;
+            padding: 50px 0;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .status-started {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        .status-paused {
+            background-color: #f39c12;
+            color: white;
+        }
+
+        .status-completed {
+            background-color: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>P2P Client</h1>
+            <div class="buttons">
+                <button class="btn btn-success" onclick="window.location.href='/create_torrent'">Create Torrent</button>
+                <button class="btn btn-primary" id="toggleAddTorrent">Add Torrent</button>
+                <button class="btn btn-warning" onclick="refreshStats()">Refresh Stats</button>
+            </div>
+        </div>
+
+        <div class="peer-info">
+            <h3>Client Information</h3>
+            <p><strong>Peer ID:</strong> <span id="peer-id">{{ peer_id }}</span></p>
+            <p><strong>Tracker:</strong> <span id="tracker-url">{{ tracker_url }}</span></p>
+        </div>
+
+        <div class="add-torrent" id="addTorrentForm" style="display: none;">
+            <h2>Add New Torrent</h2>
+            <div class="form-group">
+                <label for="magnetLink">Magnet Link:</label>
+                <input type="text" id="magnetLink" placeholder="magnet:?xt=urn:btih:...">
+            </div>
+            <div class="buttons">
+                <button class="btn btn-success" onclick="addTorrent()">Add Torrent</button>
+                <button class="btn btn-danger" onclick="toggleAddTorrentForm()">Cancel</button>
+            </div>
+        </div>
+
+        <h2>Active Torrents</h2>
+        <div id="torrents">
+            {% if torrents %}
+            <table id="torrents-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Progress</th>
+                        <th>Status</th>
+                        <th>Info Hash</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for hash, torrent in torrents.items() %}
+                    <tr id="torrent-{{ hash }}">
+                        <td>{{ torrent.name }}</td>
+                        <td>
+                            <div class="progress-text">{{ "%.1f"|format(torrent.progress) }}%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="{{ torrent.progress }}"></div>
+                            </div>
+                        </td>
+                        <td><span class="status-badge status-{{ torrent.status }}">{{ torrent.status }}</span></td>
+                        <td>{{ hash }}</td>
+                        <td class="buttons">
+                            {% if torrent.status == 'paused' %}
+                            <button class="btn btn-success" onclick="resumeTorrent('{{ hash }}')">Resume</button>
+                            {% else %}
+                            <button class="btn btn-warning" onclick="pauseTorrent('{{ hash }}')">Pause</button>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="empty-message">
+                <p>No active torrents. Add a torrent to start downloading.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        // Toggle add torrent form
+        function toggleAddTorrentForm() {
+            const form = document.getElementById('addTorrentForm');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        }
+
+        document.getElementById('toggleAddTorrent').addEventListener('click', toggleAddTorrentForm);
+
+        // Add torrent
+        function addTorrent() {
+            const magnetLink = document.getElementById('magnetLink').value.trim();
+            if (!magnetLink) {
+                alert('Vui lòng nhập magnet link');
+                return;
+            }
+
+            // Chuyển hướng form POST thay vì gọi fetch API
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/add';
+
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'magnet_url';
+            input.value = magnetLink;
+
+            form.appendChild(input);
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+        // Pause torrent
+        function pauseTorrent(infoHash) {
+            fetch('/api/pause/' + infoHash)
+                .then(response => response.json())
+                .then(data => {
+                    refreshStats();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Đã xảy ra lỗi khi tạm dừng torrent.');
+                });
+        }
+
+        // Resume torrent
+        function resumeTorrent(infoHash) {
+            fetch('/api/resume/' + infoHash)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Update UI to show resumed state
+                        refreshStats();
+                    } else {
+                        alert('Error: ' + data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while resuming the torrent.');
+                });
+        }
+
+        // Refresh torrent stats
+        function refreshStats() {
+            fetch('/get_status')
+                .then(response => response.json())
+                .then(data => {
+                    updateTorrentsTable(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        // Update torrents table
+        function updateTorrentsTable(torrents) {
+            const table = document.getElementById('torrents-table');
+            if (!table) {
+                // If table doesn't exist, refresh the page
+                window.location.reload();
+                return;
+            }
+
+            const tbody = table.querySelector('tbody');
+            const torrentsDiv = document.getElementById('torrents');
+
+            if (Object.keys(torrents).length === 0) {
+                // No torrents, show empty message
+                torrentsDiv.innerHTML = '<div class="empty-message"><p>No active torrents. Add a torrent to start downloading.</p></div>';
+                return;
+            }
+
+            // If we have torrents data but no table, create the table
+            if (Object.keys(torrents).length > 0 && !table) {
+                const newTable = createTorrentsTable(torrents);
+                torrentsDiv.innerHTML = '';
+                torrentsDiv.appendChild(newTable);
+                return;
+            }
+
+            // Update existing rows and add new ones
+            document.querySelectorAll('.progress-fill').forEach(fill => {
+                const progress = fill.getAttribute('data-progress');
+                if (progress) {
+                    fill.style.width = `${progress}%`;
+                }
+            });
+            for (const [hash, torrent] of Object.entries(torrents)) {
+                let row = document.getElementById(`torrent-${hash}`);
+
+                if (!row) {
+                    // Add new row if this torrent isn't in the table
+                    row = document.createElement('tr');
+                    row.id = `torrent-${hash}`;
+                    tbody.appendChild(row);
+                }
+
+                // Update row content
+                row.innerHTML = `
+                    <td>${torrent.name}</td>
+                    <td>
+                        <div class="progress-text">${torrent.progress.toFixed(1)}%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${torrent.progress}%"></div>
+                        </div>
+                    </td>
+                    <td><span class="status-badge status-${torrent.status}">${torrent.status}</span></td>
+                    <td>${hash}</td>
+                    <td class="buttons">
+                        ${torrent.status === 'paused' ?
+                        `<button class="btn btn-success" onclick="resumeTorrent('${hash}')">Resume</button>` :
+                        `<button class="btn btn-warning" onclick="pauseTorrent('${hash}')">Pause</button>`}
+                    </td>
+                `;
+            }
+
+            // Remove rows for torrents that are no longer active
+            Array.from(tbody.querySelectorAll('tr')).forEach(row => {
+                const hash = row.id.replace('torrent-', '');
+                if (!torrents[hash]) {
+                    row.remove();
+                }
+            });
+        }
+
+        // Create torrents table
+        function createTorrentsTable(torrents) {
+            const table = document.createElement('table');
+            table.id = 'torrents-table';
+
+            table.innerHTML = `
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Progress</th>
+                        <th>Status</th>
+                        <th>Info Hash</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            `;
+
+            const tbody = table.querySelector('tbody');
+
+            for (const [hash, torrent] of Object.entries(torrents)) {
+                const row = document.createElement('tr');
+                row.id = `torrent-${hash}`;
+                row.innerHTML = `
+                    <td>${torrent.name}</td>
+                    <td>
+                        <div class="progress-text">${torrent.progress.toFixed(1)}%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${torrent.progress}%"></div>
+                        </div>
+                    </td>
+                    <td><span class="status-badge status-${torrent.status}">${torrent.status}</span></td>
+                    <td>${hash}</td>
+                    <td class="buttons">
+                        ${torrent.status === 'paused' ?
+                        `<button class="btn btn-success" onclick="resumeTorrent('${hash}')">Resume</button>` :
+                        `<button class="btn btn-warning" onclick="pauseTorrent('${hash}')">Pause</button>`}
+                    </td>
+                `;
+                tbody.appendChild(row);
+            }
+
+            return table;
+        }
+
+        // Auto-refresh torrent stats every 5 seconds
+        setInterval(refreshStats, 5000);
+    </script>
+</body>
+
+</html>

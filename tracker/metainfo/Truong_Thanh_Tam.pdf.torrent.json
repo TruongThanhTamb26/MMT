@@ -1,0 +1,16 @@
+{
+  "name": "Truong_Thanh_Tam.pdf",
+  "piece_length": 524288,
+  "piece_count": 1,
+  "files": [
+    {
+      "path": "Truong_Thanh_Tam.pdf",
+      "length": 449872
+    }
+  ],
+  "tracker": "http://localhost:8000",
+  "pieces": [
+    "f1eed1b48812022651420d1512d44fca891218f5"
+  ],
+  "info_hash": "cf45943019306fb53d71969cf8760c7a7720b899"
+}

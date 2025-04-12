@@ -1,0 +1,1436 @@
+2025-04-12 11:03:30,438 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.28.128.187:5000
+2025-04-12 11:03:30,439 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-12 11:03:30,442 - INFO -  * Restarting with stat
+2025-04-12 11:03:30,950 - WARNING -  * Debugger is active!
+2025-04-12 11:03:30,954 - INFO -  * Debugger PIN: 112-565-363
+2025-04-12 11:04:08,294 - INFO - 127.0.0.1 - - [12/Apr/2025 11:04:08] "GET / HTTP/1.1" 200 -
+2025-04-12 11:04:09,062 - INFO - 127.0.0.1 - - [12/Apr/2025 11:04:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-12 11:04:12,941 - INFO - 127.0.0.1 - - [12/Apr/2025 11:04:12] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:04:13,279 - INFO - 127.0.0.1 - - [12/Apr/2025 11:04:13] "GET / HTTP/1.1" 200 -
+2025-04-12 11:04:18,331 - INFO - 127.0.0.1 - - [12/Apr/2025 11:04:18] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:04:18,348 - INFO - 127.0.0.1 - - [12/Apr/2025 11:04:18] "GET / HTTP/1.1" 200 -
+2025-04-12 11:04:23,399 - INFO - 127.0.0.1 - - [12/Apr/2025 11:04:23] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:04:23,719 - INFO - 127.0.0.1 - - [12/Apr/2025 11:04:23] "GET / HTTP/1.1" 200 -
+2025-04-12 11:04:28,766 - INFO - 127.0.0.1 - - [12/Apr/2025 11:04:28] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:04:28,783 - INFO - 127.0.0.1 - - [12/Apr/2025 11:04:28] "GET / HTTP/1.1" 200 -
+2025-04-12 11:04:32,651 - INFO - 127.0.0.1 - - [12/Apr/2025 11:04:32] "GET /create_torrent HTTP/1.1" 200 -
+2025-04-12 11:04:36,281 - INFO - 127.0.0.1 - - [12/Apr/2025 11:04:36] "GET / HTTP/1.1" 200 -
+2025-04-12 11:04:41,979 - INFO - 127.0.0.1 - - [12/Apr/2025 11:04:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:04:42,298 - INFO - 127.0.0.1 - - [12/Apr/2025 11:04:42] "GET / HTTP/1.1" 200 -
+2025-04-12 11:04:47,978 - INFO - 127.0.0.1 - - [12/Apr/2025 11:04:47] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:04:47,996 - INFO - 127.0.0.1 - - [12/Apr/2025 11:04:47] "GET / HTTP/1.1" 200 -
+2025-04-12 11:04:53,979 - INFO - 127.0.0.1 - - [12/Apr/2025 11:04:53] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:04:54,292 - INFO - 127.0.0.1 - - [12/Apr/2025 11:04:54] "GET / HTTP/1.1" 200 -
+2025-04-12 11:04:59,989 - INFO - 127.0.0.1 - - [12/Apr/2025 11:04:59] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:05:00,002 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:00] "GET / HTTP/1.1" 200 -
+2025-04-12 11:05:05,980 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:05] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:05:06,303 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:06] "GET / HTTP/1.1" 200 -
+2025-04-12 11:05:11,976 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:11] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:05:11,990 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:11] "GET / HTTP/1.1" 200 -
+2025-04-12 11:05:17,983 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:17] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:05:18,309 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:18] "GET / HTTP/1.1" 200 -
+2025-04-12 11:05:23,978 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:23] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:05:23,991 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:23] "GET / HTTP/1.1" 200 -
+2025-04-12 11:05:29,981 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:29] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:05:30,306 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:30] "GET / HTTP/1.1" 200 -
+2025-04-12 11:05:35,987 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:35] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:05:36,000 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:36] "GET / HTTP/1.1" 200 -
+2025-04-12 11:05:41,989 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:05:42,316 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:42] "GET / HTTP/1.1" 200 -
+2025-04-12 11:05:47,987 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:47] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:05:47,998 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:47] "GET / HTTP/1.1" 200 -
+2025-04-12 11:05:53,979 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:53] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:05:54,304 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:54] "GET / HTTP/1.1" 200 -
+2025-04-12 11:05:59,977 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:59] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:05:59,990 - INFO - 127.0.0.1 - - [12/Apr/2025 11:05:59] "GET / HTTP/1.1" 200 -
+2025-04-12 11:06:05,989 - INFO - 127.0.0.1 - - [12/Apr/2025 11:06:05] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:06:06,313 - INFO - 127.0.0.1 - - [12/Apr/2025 11:06:06] "GET / HTTP/1.1" 200 -
+2025-04-12 11:06:11,986 - INFO - 127.0.0.1 - - [12/Apr/2025 11:06:11] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:06:12,001 - INFO - 127.0.0.1 - - [12/Apr/2025 11:06:12] "GET / HTTP/1.1" 200 -
+2025-04-12 11:06:17,985 - INFO - 127.0.0.1 - - [12/Apr/2025 11:06:17] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:06:18,312 - INFO - 127.0.0.1 - - [12/Apr/2025 11:06:18] "GET / HTTP/1.1" 200 -
+2025-04-12 11:06:23,977 - INFO - 127.0.0.1 - - [12/Apr/2025 11:06:23] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:06:23,990 - INFO - 127.0.0.1 - - [12/Apr/2025 11:06:23] "GET / HTTP/1.1" 200 -
+2025-04-12 11:06:29,978 - INFO - 127.0.0.1 - - [12/Apr/2025 11:06:29] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:06:30,293 - INFO - 127.0.0.1 - - [12/Apr/2025 11:06:30] "GET / HTTP/1.1" 200 -
+2025-04-12 11:06:35,982 - INFO - 127.0.0.1 - - [12/Apr/2025 11:06:35] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:06:35,993 - INFO - 127.0.0.1 - - [12/Apr/2025 11:06:35] "GET / HTTP/1.1" 200 -
+2025-04-12 11:06:41,990 - INFO - 127.0.0.1 - - [12/Apr/2025 11:06:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:06:42,318 - INFO - 127.0.0.1 - - [12/Apr/2025 11:06:42] "GET / HTTP/1.1" 200 -
+2025-04-12 11:06:47,978 - INFO - 127.0.0.1 - - [12/Apr/2025 11:06:47] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:06:47,992 - INFO - 127.0.0.1 - - [12/Apr/2025 11:06:47] "GET / HTTP/1.1" 200 -
+2025-04-12 11:06:53,976 - INFO - 127.0.0.1 - - [12/Apr/2025 11:06:53] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:06:54,302 - INFO - 127.0.0.1 - - [12/Apr/2025 11:06:54] "GET / HTTP/1.1" 200 -
+2025-04-12 11:06:59,984 - INFO - 127.0.0.1 - - [12/Apr/2025 11:06:59] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:06:59,998 - INFO - 127.0.0.1 - - [12/Apr/2025 11:06:59] "GET / HTTP/1.1" 200 -
+2025-04-12 11:07:05,979 - INFO - 127.0.0.1 - - [12/Apr/2025 11:07:05] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:07:06,305 - INFO - 127.0.0.1 - - [12/Apr/2025 11:07:06] "GET / HTTP/1.1" 200 -
+2025-04-12 11:07:11,988 - INFO - 127.0.0.1 - - [12/Apr/2025 11:07:11] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:07:12,001 - INFO - 127.0.0.1 - - [12/Apr/2025 11:07:12] "GET / HTTP/1.1" 200 -
+2025-04-12 11:07:16,975 - INFO - 127.0.0.1 - - [12/Apr/2025 11:07:16] "GET /create_torrent HTTP/1.1" 200 -
+2025-04-12 11:07:34,139 - INFO - 127.0.0.1 - - [12/Apr/2025 11:07:34] "POST /create_torrent HTTP/1.1" 200 -
+2025-04-12 11:10:57,560 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:10:59,622 - DEBUG - http://localhost:8000 "GET /metainfo?info_hash=cf45943019306fb53d71969cf8760c7a7720b899 HTTP/1.1" 200 271
+2025-04-12 11:10:59,623 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:10:59,624 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:11:01,779 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:11:01,779 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:11:01,780 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:11:01,781 - INFO - 127.0.0.1 - - [12/Apr/2025 11:11:01] "[32mPOST /add HTTP/1.1[0m" 302 -
+2025-04-12 11:11:01,783 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:11:01,787 - INFO - 127.0.0.1 - - [12/Apr/2025 11:11:01] "GET / HTTP/1.1" 200 -
+2025-04-12 11:11:03,835 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:11:03,836 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:11:03,838 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:11:03,838 - INFO - Listening for incoming connections on port 6881
+2025-04-12 11:11:03,839 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:11:05,874 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:11:05,875 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:11:05,876 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:11:06,857 - INFO - 127.0.0.1 - - [12/Apr/2025 11:11:06] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:11:12,150 - INFO - 127.0.0.1 - - [12/Apr/2025 11:11:12] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:11:16,852 - INFO - 127.0.0.1 - - [12/Apr/2025 11:11:16] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:11:22,168 - INFO - 127.0.0.1 - - [12/Apr/2025 11:11:22] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:11:26,854 - INFO - 127.0.0.1 - - [12/Apr/2025 11:11:26] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:11:32,149 - INFO - 127.0.0.1 - - [12/Apr/2025 11:11:32] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:11:35,878 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:11:35,879 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:11:36,844 - INFO - 127.0.0.1 - - [12/Apr/2025 11:11:36] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:11:37,919 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:11:37,920 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:11:37,921 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:11:42,155 - INFO - 127.0.0.1 - - [12/Apr/2025 11:11:42] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:11:46,847 - INFO - 127.0.0.1 - - [12/Apr/2025 11:11:46] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:11:52,161 - INFO - 127.0.0.1 - - [12/Apr/2025 11:11:52] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:11:56,981 - INFO - 127.0.0.1 - - [12/Apr/2025 11:11:56] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:12:02,283 - INFO - 127.0.0.1 - - [12/Apr/2025 11:12:02] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:12:06,987 - INFO - 127.0.0.1 - - [12/Apr/2025 11:12:06] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:12:07,922 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:12:07,923 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:12:09,996 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:12:09,997 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:12:09,998 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:12:12,149 - INFO - 127.0.0.1 - - [12/Apr/2025 11:12:12] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:12:14,549 - INFO - 127.0.0.1 - - [12/Apr/2025 11:12:14] "[32mPOST /add HTTP/1.1[0m" 302 -
+2025-04-12 11:12:14,834 - INFO - 127.0.0.1 - - [12/Apr/2025 11:12:14] "GET / HTTP/1.1" 200 -
+2025-04-12 11:12:20,300 - INFO - 127.0.0.1 - - [12/Apr/2025 11:12:20] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:12:24,989 - INFO - 127.0.0.1 - - [12/Apr/2025 11:12:24] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:12:30,296 - INFO - 127.0.0.1 - - [12/Apr/2025 11:12:30] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:12:34,984 - INFO - 127.0.0.1 - - [12/Apr/2025 11:12:34] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:12:39,999 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:12:40,000 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:12:40,298 - INFO - 127.0.0.1 - - [12/Apr/2025 11:12:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:12:42,037 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:12:42,038 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:12:42,038 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:12:44,986 - INFO - 127.0.0.1 - - [12/Apr/2025 11:12:44] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:12:50,280 - INFO - 127.0.0.1 - - [12/Apr/2025 11:12:50] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:12:54,977 - INFO - 127.0.0.1 - - [12/Apr/2025 11:12:54] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:13:00,197 - INFO - 127.0.0.1 - - [12/Apr/2025 11:13:00] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:13:02,874 - INFO - 127.0.0.1 - - [12/Apr/2025 11:13:02] "[32mPOST /add HTTP/1.1[0m" 302 -
+2025-04-12 11:13:03,179 - INFO - 127.0.0.1 - - [12/Apr/2025 11:13:03] "GET / HTTP/1.1" 200 -
+2025-04-12 11:13:09,301 - INFO - 127.0.0.1 - - [12/Apr/2025 11:13:09] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:13:12,039 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:13:12,040 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:13:13,242 - INFO - 127.0.0.1 - - [12/Apr/2025 11:13:13] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:13:14,094 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:13:14,095 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:13:14,095 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:13:19,291 - INFO - 127.0.0.1 - - [12/Apr/2025 11:13:19] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:13:23,991 - INFO - 127.0.0.1 - - [12/Apr/2025 11:13:23] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:13:29,293 - INFO - 127.0.0.1 - - [12/Apr/2025 11:13:29] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:13:33,981 - INFO - 127.0.0.1 - - [12/Apr/2025 11:13:33] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:13:39,290 - INFO - 127.0.0.1 - - [12/Apr/2025 11:13:39] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:13:43,987 - INFO - 127.0.0.1 - - [12/Apr/2025 11:13:43] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:13:44,095 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:13:44,097 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:13:46,162 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:13:46,163 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:13:46,164 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:13:49,293 - INFO - 127.0.0.1 - - [12/Apr/2025 11:13:49] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:13:53,978 - INFO - 127.0.0.1 - - [12/Apr/2025 11:13:53] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:13:59,290 - INFO - 127.0.0.1 - - [12/Apr/2025 11:13:59] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:14:03,988 - INFO - 127.0.0.1 - - [12/Apr/2025 11:14:03] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:14:09,291 - INFO - 127.0.0.1 - - [12/Apr/2025 11:14:09] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:14:16,165 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:14:16,166 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:14:18,205 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:14:18,206 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:14:18,206 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:14:21,477 - INFO - 127.0.0.1 - - [12/Apr/2025 11:14:21] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:14:24,298 - INFO - 127.0.0.1 - - [12/Apr/2025 11:14:24] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:14:28,985 - INFO - 127.0.0.1 - - [12/Apr/2025 11:14:28] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:14:34,294 - INFO - 127.0.0.1 - - [12/Apr/2025 11:14:34] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:14:38,988 - INFO - 127.0.0.1 - - [12/Apr/2025 11:14:38] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:14:44,293 - INFO - 127.0.0.1 - - [12/Apr/2025 11:14:44] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:14:48,207 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:14:48,209 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:14:48,978 - INFO - 127.0.0.1 - - [12/Apr/2025 11:14:48] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:14:50,238 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:14:50,238 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:14:50,239 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:14:54,298 - INFO - 127.0.0.1 - - [12/Apr/2025 11:14:54] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:14:58,977 - INFO - 127.0.0.1 - - [12/Apr/2025 11:14:58] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:15:04,289 - INFO - 127.0.0.1 - - [12/Apr/2025 11:15:04] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:15:08,978 - INFO - 127.0.0.1 - - [12/Apr/2025 11:15:08] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:15:14,290 - INFO - 127.0.0.1 - - [12/Apr/2025 11:15:14] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:15:18,984 - INFO - 127.0.0.1 - - [12/Apr/2025 11:15:18] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:15:20,239 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:15:20,241 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:15:22,292 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:15:22,293 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:15:22,294 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:15:41,309 - INFO - 127.0.0.1 - - [12/Apr/2025 11:15:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:15:52,294 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:15:52,296 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:15:54,345 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:15:54,345 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:15:54,346 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:16:19,713 - INFO - 127.0.0.1 - - [12/Apr/2025 11:16:19] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:16:24,297 - INFO - 127.0.0.1 - - [12/Apr/2025 11:16:24] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:16:24,347 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:16:24,348 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:16:26,415 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:16:26,415 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:16:26,416 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:16:28,989 - INFO - 127.0.0.1 - - [12/Apr/2025 11:16:28] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:16:34,280 - INFO - 127.0.0.1 - - [12/Apr/2025 11:16:34] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:16:38,980 - INFO - 127.0.0.1 - - [12/Apr/2025 11:16:38] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:16:44,301 - INFO - 127.0.0.1 - - [12/Apr/2025 11:16:44] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:16:48,986 - INFO - 127.0.0.1 - - [12/Apr/2025 11:16:48] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:16:54,297 - INFO - 127.0.0.1 - - [12/Apr/2025 11:16:54] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:16:56,417 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:16:56,418 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:16:58,493 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:16:58,493 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:16:58,494 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:16:58,979 - INFO - 127.0.0.1 - - [12/Apr/2025 11:16:58] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:17:04,299 - INFO - 127.0.0.1 - - [12/Apr/2025 11:17:04] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:17:08,977 - INFO - 127.0.0.1 - - [12/Apr/2025 11:17:08] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:17:14,290 - INFO - 127.0.0.1 - - [12/Apr/2025 11:17:14] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:17:18,987 - INFO - 127.0.0.1 - - [12/Apr/2025 11:17:18] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:17:28,494 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:17:28,496 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:17:30,520 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:17:30,520 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:17:30,521 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:17:41,291 - INFO - 127.0.0.1 - - [12/Apr/2025 11:17:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:18:00,521 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:18:00,523 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:18:02,592 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:18:02,593 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:18:02,594 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:18:32,595 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:18:32,596 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:18:34,637 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:18:34,638 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:18:34,638 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:18:40,989 - INFO - 127.0.0.1 - - [12/Apr/2025 11:18:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:19:04,639 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:19:04,641 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:19:06,675 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:19:06,676 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:19:06,677 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:19:36,677 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:19:36,679 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:19:38,745 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:19:38,746 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:19:38,746 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:19:41,289 - INFO - 127.0.0.1 - - [12/Apr/2025 11:19:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:20:08,747 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:20:08,748 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:20:10,804 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:20:10,805 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:20:10,805 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:20:40,806 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:20:40,808 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:20:40,982 - INFO - 127.0.0.1 - - [12/Apr/2025 11:20:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:20:42,865 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:20:42,866 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:20:42,867 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:21:12,868 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:21:12,869 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:21:14,919 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:21:14,919 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:21:14,920 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:21:41,295 - INFO - 127.0.0.1 - - [12/Apr/2025 11:21:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:21:44,921 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:21:44,923 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:21:46,961 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:21:46,962 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:21:46,962 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:22:16,963 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:22:16,965 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:22:19,027 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:22:19,027 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:22:19,028 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:22:41,289 - INFO - 127.0.0.1 - - [12/Apr/2025 11:22:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:22:49,028 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:22:49,030 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:22:51,085 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:22:51,085 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:22:51,086 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:23:21,086 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:23:21,088 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:23:23,131 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:23:23,131 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:23:23,132 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:23:40,989 - INFO - 127.0.0.1 - - [12/Apr/2025 11:23:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:23:53,133 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:23:53,134 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:23:55,177 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:23:55,178 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:23:55,179 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:24:25,179 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:24:25,181 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:24:27,225 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:24:27,225 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:24:27,226 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:24:41,294 - INFO - 127.0.0.1 - - [12/Apr/2025 11:24:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:24:57,227 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:24:57,228 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:24:59,285 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:24:59,286 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:24:59,286 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:25:29,287 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:25:29,288 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:25:31,343 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:25:31,344 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:25:31,345 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:25:40,989 - INFO - 127.0.0.1 - - [12/Apr/2025 11:25:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:26:01,346 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:26:01,347 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:26:03,395 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:26:03,396 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:26:03,397 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:26:33,397 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:26:33,399 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:26:35,464 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:26:35,465 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:26:35,466 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:26:41,298 - INFO - 127.0.0.1 - - [12/Apr/2025 11:26:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:27:05,467 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:27:05,469 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:27:07,531 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:27:07,532 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:27:07,533 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:27:37,533 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:27:37,534 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:27:39,592 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:27:39,593 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:27:39,593 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:27:40,979 - INFO - 127.0.0.1 - - [12/Apr/2025 11:27:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:28:09,593 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:28:09,595 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:28:11,665 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:28:11,666 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:28:11,667 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:28:41,297 - INFO - 127.0.0.1 - - [12/Apr/2025 11:28:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:28:41,668 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:28:41,670 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:28:43,717 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:28:43,717 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:28:43,718 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:29:13,719 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:29:13,720 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:29:15,761 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:29:15,762 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:29:15,763 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:29:40,991 - INFO - 127.0.0.1 - - [12/Apr/2025 11:29:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:29:45,764 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:29:45,765 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:29:47,820 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:29:47,820 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:29:47,821 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:30:17,822 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:30:17,824 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:30:19,882 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:30:19,882 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:30:19,883 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:30:41,286 - INFO - 127.0.0.1 - - [12/Apr/2025 11:30:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:30:49,884 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:30:49,885 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:30:51,933 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:30:51,934 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:30:51,935 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:31:21,935 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:31:21,937 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:31:23,984 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:31:23,984 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:31:23,985 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:31:40,980 - INFO - 127.0.0.1 - - [12/Apr/2025 11:31:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:31:53,986 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:31:53,987 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:31:56,059 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:31:56,059 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:31:56,060 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:32:26,060 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:32:26,062 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:32:28,127 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:32:28,127 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:32:28,128 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:32:41,300 - INFO - 127.0.0.1 - - [12/Apr/2025 11:32:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:32:58,128 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:32:58,130 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:33:00,185 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:33:00,185 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:33:00,186 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:33:30,187 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:33:30,188 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:33:32,263 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:33:32,264 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:33:32,264 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:33:40,982 - INFO - 127.0.0.1 - - [12/Apr/2025 11:33:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:34:02,265 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:34:02,267 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:34:03,167 - INFO - 127.0.0.1 - - [12/Apr/2025 11:34:03] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:34:03,431 - INFO - 127.0.0.1 - - [12/Apr/2025 11:34:03] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:34:04,302 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:34:04,303 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:34:04,303 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:34:08,983 - INFO - 127.0.0.1 - - [12/Apr/2025 11:34:08] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:34:14,291 - INFO - 127.0.0.1 - - [12/Apr/2025 11:34:14] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:34:18,986 - INFO - 127.0.0.1 - - [12/Apr/2025 11:34:18] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:34:24,293 - INFO - 127.0.0.1 - - [12/Apr/2025 11:34:24] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:34:28,991 - INFO - 127.0.0.1 - - [12/Apr/2025 11:34:28] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:34:34,305 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:34:34,305 - INFO - 127.0.0.1 - - [12/Apr/2025 11:34:34] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:34:34,306 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:34:36,355 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:34:36,356 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:34:36,356 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:34:38,976 - INFO - 127.0.0.1 - - [12/Apr/2025 11:34:38] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:34:44,300 - INFO - 127.0.0.1 - - [12/Apr/2025 11:34:44] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:34:48,977 - INFO - 127.0.0.1 - - [12/Apr/2025 11:34:48] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:34:54,277 - INFO - 127.0.0.1 - - [12/Apr/2025 11:34:54] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:34:58,980 - INFO - 127.0.0.1 - - [12/Apr/2025 11:34:58] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:35:04,295 - INFO - 127.0.0.1 - - [12/Apr/2025 11:35:04] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:35:06,357 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:35:06,358 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:35:08,402 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:35:08,402 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:35:08,403 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:35:38,404 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:35:38,405 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:35:40,449 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:35:40,450 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:35:40,451 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:35:40,988 - INFO - 127.0.0.1 - - [12/Apr/2025 11:35:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:36:10,452 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:36:10,453 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:36:12,514 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:36:12,515 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:36:12,515 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:36:41,298 - INFO - 127.0.0.1 - - [12/Apr/2025 11:36:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:36:42,516 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:36:42,518 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:36:44,574 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:36:44,574 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:36:44,575 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:37:14,576 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:37:14,577 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:37:16,632 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:37:16,633 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:37:16,634 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:37:40,976 - INFO - 127.0.0.1 - - [12/Apr/2025 11:37:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:37:46,634 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:37:46,636 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:37:48,692 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:37:48,693 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:37:48,693 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:38:18,694 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:38:18,695 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:38:20,742 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:38:20,743 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:38:20,743 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:38:41,292 - INFO - 127.0.0.1 - - [12/Apr/2025 11:38:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:38:50,744 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:38:50,745 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:38:52,798 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:38:52,798 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:38:52,799 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:39:22,800 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:39:22,801 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:39:24,857 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:39:24,858 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:39:24,858 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:39:40,977 - INFO - 127.0.0.1 - - [12/Apr/2025 11:39:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:39:54,859 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:39:54,860 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:39:56,919 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:39:56,920 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:39:56,920 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:40:26,921 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:40:26,922 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:40:28,957 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:40:28,957 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:40:28,958 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:40:41,303 - INFO - 127.0.0.1 - - [12/Apr/2025 11:40:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:40:58,958 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:40:58,960 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:41:01,005 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:41:01,005 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:41:01,006 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:41:31,007 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:41:31,009 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:41:33,068 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:41:33,069 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:41:33,070 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:41:40,980 - INFO - 127.0.0.1 - - [12/Apr/2025 11:41:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:42:03,070 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:42:03,072 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:42:05,127 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:42:05,127 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:42:05,128 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:42:35,128 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:42:35,131 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:42:37,198 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:42:37,199 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:42:37,200 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:42:41,295 - INFO - 127.0.0.1 - - [12/Apr/2025 11:42:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:43:07,200 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:43:07,202 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:43:09,262 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:43:09,263 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:43:09,264 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:43:39,265 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:43:39,266 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:43:40,096 - INFO - 127.0.0.1 - - [12/Apr/2025 11:43:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:43:41,325 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:43:41,326 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:43:41,327 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:43:44,393 - INFO - 127.0.0.1 - - [12/Apr/2025 11:43:44] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:43:48,981 - INFO - 127.0.0.1 - - [12/Apr/2025 11:43:48] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:43:54,291 - INFO - 127.0.0.1 - - [12/Apr/2025 11:43:54] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:43:58,988 - INFO - 127.0.0.1 - - [12/Apr/2025 11:43:58] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:44:04,282 - INFO - 127.0.0.1 - - [12/Apr/2025 11:44:04] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:44:08,986 - INFO - 127.0.0.1 - - [12/Apr/2025 11:44:08] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:44:11,327 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:44:11,329 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:44:13,383 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:44:13,384 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:44:13,384 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:44:14,295 - INFO - 127.0.0.1 - - [12/Apr/2025 11:44:14] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:44:18,990 - INFO - 127.0.0.1 - - [12/Apr/2025 11:44:18] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:44:24,288 - INFO - 127.0.0.1 - - [12/Apr/2025 11:44:24] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:44:28,983 - INFO - 127.0.0.1 - - [12/Apr/2025 11:44:28] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:44:34,301 - INFO - 127.0.0.1 - - [12/Apr/2025 11:44:34] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:44:38,991 - INFO - 127.0.0.1 - - [12/Apr/2025 11:44:38] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:44:43,385 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:44:43,387 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:44:45,457 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:44:45,457 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:44:45,458 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:45:15,459 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:45:15,460 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:45:17,510 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:45:17,511 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:45:17,512 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:45:40,291 - INFO - 127.0.0.1 - - [12/Apr/2025 11:45:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:45:47,513 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:45:47,515 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:45:49,578 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:45:49,579 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:45:49,580 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:46:19,580 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:46:19,581 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:46:21,647 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:46:21,648 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:46:21,648 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:46:41,287 - INFO - 127.0.0.1 - - [12/Apr/2025 11:46:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:46:51,649 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:46:51,650 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:46:53,703 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:46:53,704 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:46:53,704 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:47:23,706 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:47:23,707 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:47:25,750 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:47:25,751 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:47:25,751 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:47:40,985 - INFO - 127.0.0.1 - - [12/Apr/2025 11:47:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:47:55,752 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:47:55,753 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:47:57,777 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:47:57,778 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:47:57,779 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:48:27,779 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:48:27,781 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:48:29,827 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:48:29,828 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:48:29,828 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:48:41,293 - INFO - 127.0.0.1 - - [12/Apr/2025 11:48:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:48:59,829 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:48:59,831 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:49:01,885 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:49:01,885 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:49:01,886 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:49:31,887 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:49:31,888 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:49:33,939 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:49:33,940 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:49:33,941 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:49:40,977 - INFO - 127.0.0.1 - - [12/Apr/2025 11:49:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:50:03,942 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:50:03,943 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:50:05,981 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:50:05,982 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:50:05,983 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:50:35,983 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:50:35,985 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:50:38,018 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:50:38,019 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:50:38,020 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:50:41,296 - INFO - 127.0.0.1 - - [12/Apr/2025 11:50:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:51:08,021 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:51:08,022 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:51:10,086 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:51:10,087 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:51:10,087 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:51:40,088 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:51:40,090 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:51:40,991 - INFO - 127.0.0.1 - - [12/Apr/2025 11:51:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:51:42,143 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:51:42,143 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:51:42,144 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:52:12,144 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:52:12,146 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:52:14,174 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:52:14,175 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:52:14,176 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:52:41,293 - INFO - 127.0.0.1 - - [12/Apr/2025 11:52:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:52:44,176 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:52:44,178 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:52:46,217 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:52:46,217 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:52:46,218 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:53:16,219 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:53:16,221 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:53:18,265 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:53:18,266 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:53:18,266 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:53:40,991 - INFO - 127.0.0.1 - - [12/Apr/2025 11:53:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:53:48,267 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:53:48,268 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:53:50,294 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:53:50,295 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:53:50,296 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:54:20,296 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:54:20,298 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:54:22,349 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:54:22,350 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:54:22,350 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:54:41,289 - INFO - 127.0.0.1 - - [12/Apr/2025 11:54:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:54:52,351 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:54:52,352 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:54:54,392 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:54:54,393 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:54:54,393 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:55:24,394 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:55:24,395 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:55:26,441 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:55:26,441 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:55:26,442 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:55:40,990 - INFO - 127.0.0.1 - - [12/Apr/2025 11:55:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:55:56,442 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:55:56,444 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:55:58,489 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:55:58,490 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:55:58,490 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:56:28,491 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:56:28,493 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:56:30,540 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:56:30,541 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:56:30,542 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:56:41,288 - INFO - 127.0.0.1 - - [12/Apr/2025 11:56:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:57:00,542 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:57:00,544 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:57:02,593 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:57:02,594 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:57:02,594 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:57:32,595 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:57:32,596 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:57:34,623 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:57:34,623 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:57:34,624 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:57:40,991 - INFO - 127.0.0.1 - - [12/Apr/2025 11:57:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:58:04,625 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:58:04,626 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:58:06,690 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:58:06,691 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:58:06,691 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:58:36,692 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:58:36,694 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:58:38,719 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:58:38,720 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:58:38,720 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:58:41,293 - INFO - 127.0.0.1 - - [12/Apr/2025 11:58:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:59:08,721 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:59:08,723 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:59:10,753 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:59:10,753 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:59:10,754 - INFO - Announced to tracker, got 0 peers
+2025-04-12 11:59:40,755 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 11:59:40,756 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 11:59:40,987 - INFO - 127.0.0.1 - - [12/Apr/2025 11:59:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 11:59:42,817 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 11:59:42,817 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 11:59:42,818 - INFO - Announced to tracker, got 0 peers
+2025-04-12 12:00:12,819 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 12:00:12,820 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 12:00:14,852 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 12:00:14,853 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 12:00:14,854 - INFO - Announced to tracker, got 0 peers
+2025-04-12 12:00:41,296 - INFO - 127.0.0.1 - - [12/Apr/2025 12:00:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:00:44,854 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 12:00:44,855 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 12:00:46,897 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 12:00:46,897 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 12:00:46,898 - INFO - Announced to tracker, got 0 peers
+2025-04-12 12:01:16,898 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 12:01:16,900 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 12:01:18,952 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 12:01:18,953 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 12:01:18,954 - INFO - Announced to tracker, got 0 peers
+2025-04-12 12:01:40,978 - INFO - 127.0.0.1 - - [12/Apr/2025 12:01:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:01:48,954 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 12:01:48,956 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 12:01:51,013 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 12:01:51,014 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 12:01:51,014 - INFO - Announced to tracker, got 0 peers
+2025-04-12 12:02:21,015 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 12:02:21,016 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 12:02:23,073 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 12:02:23,073 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 12:02:23,074 - INFO - Announced to tracker, got 0 peers
+2025-04-12 12:02:41,290 - INFO - 127.0.0.1 - - [12/Apr/2025 12:02:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:02:53,075 - INFO - Announcing to tracker with event=started, left=449872
+2025-04-12 12:02:53,076 - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-04-12 12:02:55,138 - DEBUG - http://localhost:8000 "POST /announce HTTP/1.1" 500 265
+2025-04-12 12:02:55,139 - ERROR - Announce failed: <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+2025-04-12 12:02:55,139 - INFO - Announced to tracker, got 0 peers
+2025-04-12 12:08:39,027 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.28.128.187:5000
+2025-04-12 12:08:39,028 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-12 12:08:39,030 - INFO -  * Restarting with stat
+2025-04-12 12:08:39,540 - WARNING -  * Debugger is active!
+2025-04-12 12:08:39,545 - INFO -  * Debugger PIN: 112-565-363
+2025-04-12 12:08:41,295 - INFO - 127.0.0.1 - - [12/Apr/2025 12:08:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:08:46,609 - INFO - 127.0.0.1 - - [12/Apr/2025 12:08:46] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:08:46,980 - INFO - 127.0.0.1 - - [12/Apr/2025 12:08:46] "GET / HTTP/1.1" 200 -
+2025-04-12 12:08:47,831 - INFO - 127.0.0.1 - - [12/Apr/2025 12:08:47] "GET / HTTP/1.1" 200 -
+2025-04-12 12:08:52,895 - INFO - 127.0.0.1 - - [12/Apr/2025 12:08:52] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:08:53,216 - INFO - 127.0.0.1 - - [12/Apr/2025 12:08:53] "GET / HTTP/1.1" 200 -
+2025-04-12 12:08:58,976 - INFO - 127.0.0.1 - - [12/Apr/2025 12:08:58] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:08:58,989 - INFO - 127.0.0.1 - - [12/Apr/2025 12:08:58] "GET / HTTP/1.1" 200 -
+2025-04-12 12:09:04,989 - INFO - 127.0.0.1 - - [12/Apr/2025 12:09:04] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:09:05,320 - INFO - 127.0.0.1 - - [12/Apr/2025 12:09:05] "GET / HTTP/1.1" 200 -
+2025-04-12 12:09:10,984 - INFO - 127.0.0.1 - - [12/Apr/2025 12:09:10] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:09:11,004 - INFO - 127.0.0.1 - - [12/Apr/2025 12:09:11] "GET / HTTP/1.1" 200 -
+2025-04-12 12:09:16,979 - INFO - 127.0.0.1 - - [12/Apr/2025 12:09:16] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:09:17,307 - INFO - 127.0.0.1 - - [12/Apr/2025 12:09:17] "GET / HTTP/1.1" 200 -
+2025-04-12 12:09:22,992 - INFO - 127.0.0.1 - - [12/Apr/2025 12:09:22] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:09:23,012 - INFO - 127.0.0.1 - - [12/Apr/2025 12:09:23] "GET / HTTP/1.1" 200 -
+2025-04-12 12:09:28,977 - INFO - 127.0.0.1 - - [12/Apr/2025 12:09:28] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:09:29,300 - INFO - 127.0.0.1 - - [12/Apr/2025 12:09:29] "GET / HTTP/1.1" 200 -
+2025-04-12 12:09:34,978 - INFO - 127.0.0.1 - - [12/Apr/2025 12:09:34] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:09:34,997 - INFO - 127.0.0.1 - - [12/Apr/2025 12:09:34] "GET / HTTP/1.1" 200 -
+2025-04-12 12:09:40,984 - INFO - 127.0.0.1 - - [12/Apr/2025 12:09:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:09:41,307 - INFO - 127.0.0.1 - - [12/Apr/2025 12:09:41] "GET / HTTP/1.1" 200 -
+2025-04-12 12:09:46,988 - INFO - 127.0.0.1 - - [12/Apr/2025 12:09:46] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:09:47,002 - INFO - 127.0.0.1 - - [12/Apr/2025 12:09:47] "GET / HTTP/1.1" 200 -
+2025-04-12 12:09:52,983 - INFO - 127.0.0.1 - - [12/Apr/2025 12:09:52] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:09:53,299 - INFO - 127.0.0.1 - - [12/Apr/2025 12:09:53] "GET / HTTP/1.1" 200 -
+2025-04-12 12:09:58,986 - INFO - 127.0.0.1 - - [12/Apr/2025 12:09:58] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:09:59,005 - INFO - 127.0.0.1 - - [12/Apr/2025 12:09:59] "GET / HTTP/1.1" 200 -
+2025-04-12 12:10:04,986 - INFO - 127.0.0.1 - - [12/Apr/2025 12:10:04] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:10:05,314 - INFO - 127.0.0.1 - - [12/Apr/2025 12:10:05] "GET / HTTP/1.1" 200 -
+2025-04-12 12:10:10,986 - INFO - 127.0.0.1 - - [12/Apr/2025 12:10:10] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:10:11,005 - INFO - 127.0.0.1 - - [12/Apr/2025 12:10:11] "GET / HTTP/1.1" 200 -
+2025-04-12 12:10:16,985 - INFO - 127.0.0.1 - - [12/Apr/2025 12:10:16] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:10:17,311 - INFO - 127.0.0.1 - - [12/Apr/2025 12:10:17] "GET / HTTP/1.1" 200 -
+2025-04-12 12:10:22,977 - INFO - 127.0.0.1 - - [12/Apr/2025 12:10:22] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:10:22,995 - INFO - 127.0.0.1 - - [12/Apr/2025 12:10:22] "GET / HTTP/1.1" 200 -
+2025-04-12 12:10:28,977 - INFO - 127.0.0.1 - - [12/Apr/2025 12:10:28] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:10:29,301 - INFO - 127.0.0.1 - - [12/Apr/2025 12:10:29] "GET / HTTP/1.1" 200 -
+2025-04-12 12:10:34,978 - INFO - 127.0.0.1 - - [12/Apr/2025 12:10:34] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:10:34,994 - INFO - 127.0.0.1 - - [12/Apr/2025 12:10:34] "GET / HTTP/1.1" 200 -
+2025-04-12 12:10:37,988 - INFO -  * Restarting with stat
+2025-04-12 12:10:38,520 - WARNING -  * Debugger is active!
+2025-04-12 12:10:38,524 - INFO -  * Debugger PIN: 112-565-363
+2025-04-12 12:10:41,280 - INFO - 127.0.0.1 - - [12/Apr/2025 12:10:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:10:41,549 - INFO - 127.0.0.1 - - [12/Apr/2025 12:10:41] "GET / HTTP/1.1" 200 -
+2025-04-12 12:10:46,987 - INFO - 127.0.0.1 - - [12/Apr/2025 12:10:46] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:10:47,317 - INFO - 127.0.0.1 - - [12/Apr/2025 12:10:47] "GET / HTTP/1.1" 200 -
+2025-04-12 12:10:52,993 - INFO - 127.0.0.1 - - [12/Apr/2025 12:10:52] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:10:53,015 - INFO - 127.0.0.1 - - [12/Apr/2025 12:10:53] "GET / HTTP/1.1" 200 -
+2025-04-12 12:10:58,988 - INFO - 127.0.0.1 - - [12/Apr/2025 12:10:58] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:10:59,309 - INFO - 127.0.0.1 - - [12/Apr/2025 12:10:59] "GET / HTTP/1.1" 200 -
+2025-04-12 12:11:00,857 - INFO -  * Restarting with stat
+2025-04-12 12:11:01,357 - WARNING -  * Debugger is active!
+2025-04-12 12:11:01,361 - INFO -  * Debugger PIN: 112-565-363
+2025-04-12 12:11:05,291 - INFO - 127.0.0.1 - - [12/Apr/2025 12:11:05] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:11:05,565 - INFO - 127.0.0.1 - - [12/Apr/2025 12:11:05] "GET / HTTP/1.1" 200 -
+2025-04-12 12:11:10,988 - INFO - 127.0.0.1 - - [12/Apr/2025 12:11:10] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:11:11,316 - INFO - 127.0.0.1 - - [12/Apr/2025 12:11:11] "GET / HTTP/1.1" 200 -
+2025-04-12 12:11:16,976 - INFO - 127.0.0.1 - - [12/Apr/2025 12:11:16] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:11:16,993 - INFO - 127.0.0.1 - - [12/Apr/2025 12:11:16] "GET / HTTP/1.1" 200 -
+2025-04-12 12:11:22,982 - INFO - 127.0.0.1 - - [12/Apr/2025 12:11:22] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:11:23,306 - INFO - 127.0.0.1 - - [12/Apr/2025 12:11:23] "GET / HTTP/1.1" 200 -
+2025-04-12 12:11:28,979 - INFO - 127.0.0.1 - - [12/Apr/2025 12:11:28] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:11:28,993 - INFO - 127.0.0.1 - - [12/Apr/2025 12:11:28] "GET / HTTP/1.1" 200 -
+2025-04-12 12:11:34,977 - INFO - 127.0.0.1 - - [12/Apr/2025 12:11:34] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:11:35,311 - INFO - 127.0.0.1 - - [12/Apr/2025 12:11:35] "GET / HTTP/1.1" 200 -
+2025-04-12 12:11:40,978 - INFO - 127.0.0.1 - - [12/Apr/2025 12:11:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:11:40,998 - INFO - 127.0.0.1 - - [12/Apr/2025 12:11:40] "GET / HTTP/1.1" 200 -
+2025-04-12 12:11:46,988 - INFO - 127.0.0.1 - - [12/Apr/2025 12:11:46] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:11:47,318 - INFO - 127.0.0.1 - - [12/Apr/2025 12:11:47] "GET / HTTP/1.1" 200 -
+2025-04-12 12:11:52,988 - INFO - 127.0.0.1 - - [12/Apr/2025 12:11:52] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:11:53,006 - INFO - 127.0.0.1 - - [12/Apr/2025 12:11:53] "GET / HTTP/1.1" 200 -
+2025-04-12 12:11:58,989 - INFO - 127.0.0.1 - - [12/Apr/2025 12:11:58] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:11:59,308 - INFO - 127.0.0.1 - - [12/Apr/2025 12:11:59] "GET / HTTP/1.1" 200 -
+2025-04-12 12:12:04,976 - INFO - 127.0.0.1 - - [12/Apr/2025 12:12:04] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:12:04,996 - INFO - 127.0.0.1 - - [12/Apr/2025 12:12:04] "GET / HTTP/1.1" 200 -
+2025-04-12 12:12:07,201 - INFO -  * Restarting with stat
+2025-04-12 12:12:07,711 - WARNING -  * Debugger is active!
+2025-04-12 12:12:07,715 - INFO -  * Debugger PIN: 112-565-363
+2025-04-12 12:12:11,295 - INFO - 127.0.0.1 - - [12/Apr/2025 12:12:11] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:12:11,558 - INFO - 127.0.0.1 - - [12/Apr/2025 12:12:11] "GET / HTTP/1.1" 200 -
+2025-04-12 12:12:13,871 - INFO -  * Restarting with stat
+2025-04-12 12:12:14,410 - WARNING -  * Debugger is active!
+2025-04-12 12:12:14,414 - INFO -  * Debugger PIN: 112-565-363
+2025-04-12 12:12:17,304 - INFO - 127.0.0.1 - - [12/Apr/2025 12:12:17] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:12:17,551 - INFO - 127.0.0.1 - - [12/Apr/2025 12:12:17] "GET / HTTP/1.1" 200 -
+2025-04-12 12:12:22,988 - INFO - 127.0.0.1 - - [12/Apr/2025 12:12:22] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:12:23,303 - INFO - 127.0.0.1 - - [12/Apr/2025 12:12:23] "GET / HTTP/1.1" 200 -
+2025-04-12 12:12:28,983 - INFO - 127.0.0.1 - - [12/Apr/2025 12:12:28] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:12:28,996 - INFO - 127.0.0.1 - - [12/Apr/2025 12:12:28] "GET / HTTP/1.1" 200 -
+2025-04-12 12:12:34,989 - INFO - 127.0.0.1 - - [12/Apr/2025 12:12:34] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:12:35,312 - INFO - 127.0.0.1 - - [12/Apr/2025 12:12:35] "GET / HTTP/1.1" 200 -
+2025-04-12 12:12:40,989 - INFO - 127.0.0.1 - - [12/Apr/2025 12:12:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:12:41,010 - INFO - 127.0.0.1 - - [12/Apr/2025 12:12:41] "GET / HTTP/1.1" 200 -
+2025-04-12 12:12:46,976 - INFO - 127.0.0.1 - - [12/Apr/2025 12:12:46] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:12:47,311 - INFO - 127.0.0.1 - - [12/Apr/2025 12:12:47] "GET / HTTP/1.1" 200 -
+2025-04-12 12:12:49,891 - INFO -  * Restarting with stat
+2025-04-12 12:12:50,424 - WARNING -  * Debugger is active!
+2025-04-12 12:12:50,427 - INFO -  * Debugger PIN: 112-565-363
+2025-04-12 12:12:53,283 - INFO - 127.0.0.1 - - [12/Apr/2025 12:12:53] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:12:53,566 - INFO - 127.0.0.1 - - [12/Apr/2025 12:12:53] "GET / HTTP/1.1" 200 -
+2025-04-12 12:12:56,589 - INFO -  * Restarting with stat
+2025-04-12 12:12:57,143 - WARNING -  * Debugger is active!
+2025-04-12 12:12:57,148 - INFO -  * Debugger PIN: 112-565-363
+2025-04-12 12:12:59,290 - INFO - 127.0.0.1 - - [12/Apr/2025 12:12:59] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:12:59,566 - INFO - 127.0.0.1 - - [12/Apr/2025 12:12:59] "GET / HTTP/1.1" 200 -
+2025-04-12 12:13:04,985 - INFO - 127.0.0.1 - - [12/Apr/2025 12:13:04] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:13:05,316 - INFO - 127.0.0.1 - - [12/Apr/2025 12:13:05] "GET / HTTP/1.1" 200 -
+2025-04-12 12:13:10,988 - INFO - 127.0.0.1 - - [12/Apr/2025 12:13:10] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:13:11,002 - INFO - 127.0.0.1 - - [12/Apr/2025 12:13:11] "GET / HTTP/1.1" 200 -
+2025-04-12 12:13:15,444 - INFO -  * Restarting with stat
+2025-04-12 12:13:15,915 - WARNING -  * Debugger is active!
+2025-04-12 12:13:15,919 - INFO -  * Debugger PIN: 112-565-363
+2025-04-12 12:13:17,292 - INFO - 127.0.0.1 - - [12/Apr/2025 12:13:17] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:13:17,551 - INFO - 127.0.0.1 - - [12/Apr/2025 12:13:17] "GET / HTTP/1.1" 200 -
+2025-04-12 12:13:22,980 - INFO - 127.0.0.1 - - [12/Apr/2025 12:13:22] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:13:23,305 - INFO - 127.0.0.1 - - [12/Apr/2025 12:13:23] "GET / HTTP/1.1" 200 -
+2025-04-12 12:13:28,982 - INFO - 127.0.0.1 - - [12/Apr/2025 12:13:28] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:13:28,996 - INFO - 127.0.0.1 - - [12/Apr/2025 12:13:28] "GET / HTTP/1.1" 200 -
+2025-04-12 12:13:31,168 - INFO -  * Restarting with stat
+2025-04-12 12:13:31,663 - WARNING -  * Debugger is active!
+2025-04-12 12:13:31,667 - INFO -  * Debugger PIN: 112-565-363
+2025-04-12 12:13:35,285 - INFO - 127.0.0.1 - - [12/Apr/2025 12:13:35] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:13:35,561 - INFO - 127.0.0.1 - - [12/Apr/2025 12:13:35] "GET / HTTP/1.1" 200 -
+2025-04-12 12:13:40,985 - INFO - 127.0.0.1 - - [12/Apr/2025 12:13:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:13:41,304 - INFO - 127.0.0.1 - - [12/Apr/2025 12:13:41] "GET / HTTP/1.1" 200 -
+2025-04-12 12:13:46,977 - INFO - 127.0.0.1 - - [12/Apr/2025 12:13:46] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:13:46,996 - INFO - 127.0.0.1 - - [12/Apr/2025 12:13:46] "GET / HTTP/1.1" 200 -
+2025-04-12 12:13:52,988 - INFO - 127.0.0.1 - - [12/Apr/2025 12:13:52] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:13:53,314 - INFO - 127.0.0.1 - - [12/Apr/2025 12:13:53] "GET / HTTP/1.1" 200 -
+2025-04-12 12:13:58,986 - INFO - 127.0.0.1 - - [12/Apr/2025 12:13:58] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:13:59,008 - INFO - 127.0.0.1 - - [12/Apr/2025 12:13:59] "GET / HTTP/1.1" 200 -
+2025-04-12 12:14:04,988 - INFO - 127.0.0.1 - - [12/Apr/2025 12:14:04] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:14:05,106 - INFO -  * Restarting with stat
+2025-04-12 12:14:05,578 - WARNING -  * Debugger is active!
+2025-04-12 12:14:05,581 - INFO -  * Debugger PIN: 112-565-363
+2025-04-12 12:14:05,612 - INFO - 127.0.0.1 - - [12/Apr/2025 12:14:05] "GET / HTTP/1.1" 200 -
+2025-04-12 12:14:10,981 - INFO - 127.0.0.1 - - [12/Apr/2025 12:14:10] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:14:10,997 - INFO - 127.0.0.1 - - [12/Apr/2025 12:14:10] "GET / HTTP/1.1" 200 -
+2025-04-12 12:14:16,980 - INFO - 127.0.0.1 - - [12/Apr/2025 12:14:16] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:14:17,295 - INFO - 127.0.0.1 - - [12/Apr/2025 12:14:17] "GET / HTTP/1.1" 200 -
+2025-04-12 12:14:22,980 - INFO - 127.0.0.1 - - [12/Apr/2025 12:14:22] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:14:22,998 - INFO - 127.0.0.1 - - [12/Apr/2025 12:14:22] "GET / HTTP/1.1" 200 -
+2025-04-12 12:14:28,982 - INFO - 127.0.0.1 - - [12/Apr/2025 12:14:28] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:14:29,299 - INFO - 127.0.0.1 - - [12/Apr/2025 12:14:29] "GET / HTTP/1.1" 200 -
+2025-04-12 12:14:34,003 - INFO -  * Restarting with stat
+2025-04-12 12:14:34,521 - WARNING -  * Debugger is active!
+2025-04-12 12:14:34,525 - INFO -  * Debugger PIN: 112-565-363
+2025-04-12 12:14:35,295 - INFO - 127.0.0.1 - - [12/Apr/2025 12:14:35] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:14:35,564 - INFO - 127.0.0.1 - - [12/Apr/2025 12:14:35] "GET / HTTP/1.1" 200 -
+2025-04-12 12:14:40,978 - INFO - 127.0.0.1 - - [12/Apr/2025 12:14:40] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:14:41,303 - INFO - 127.0.0.1 - - [12/Apr/2025 12:14:41] "GET / HTTP/1.1" 200 -
+2025-04-12 12:14:46,985 - INFO - 127.0.0.1 - - [12/Apr/2025 12:14:46] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:14:47,001 - INFO - 127.0.0.1 - - [12/Apr/2025 12:14:47] "GET / HTTP/1.1" 200 -
+2025-04-12 12:14:52,980 - INFO - 127.0.0.1 - - [12/Apr/2025 12:14:52] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:14:53,299 - INFO - 127.0.0.1 - - [12/Apr/2025 12:14:53] "GET / HTTP/1.1" 200 -
+2025-04-12 12:14:56,870 - INFO -  * Restarting with stat
+2025-04-12 12:14:57,378 - WARNING -  * Debugger is active!
+2025-04-12 12:14:57,382 - INFO -  * Debugger PIN: 112-565-363
+2025-04-12 12:14:59,292 - INFO - 127.0.0.1 - - [12/Apr/2025 12:14:59] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:14:59,565 - INFO - 127.0.0.1 - - [12/Apr/2025 12:14:59] "GET / HTTP/1.1" 200 -
+2025-04-12 12:15:04,975 - INFO - 127.0.0.1 - - [12/Apr/2025 12:15:04] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:15:05,303 - INFO - 127.0.0.1 - - [12/Apr/2025 12:15:05] "GET / HTTP/1.1" 200 -
+2025-04-12 12:15:10,982 - INFO - 127.0.0.1 - - [12/Apr/2025 12:15:10] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:15:11,002 - INFO - 127.0.0.1 - - [12/Apr/2025 12:15:11] "GET / HTTP/1.1" 200 -
+2025-04-12 12:15:16,978 - INFO - 127.0.0.1 - - [12/Apr/2025 12:15:16] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:15:17,309 - INFO - 127.0.0.1 - - [12/Apr/2025 12:15:17] "GET / HTTP/1.1" 200 -
+2025-04-12 12:15:22,982 - INFO - 127.0.0.1 - - [12/Apr/2025 12:15:22] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:15:22,997 - INFO - 127.0.0.1 - - [12/Apr/2025 12:15:22] "GET / HTTP/1.1" 200 -
+2025-04-12 12:15:28,984 - INFO - 127.0.0.1 - - [12/Apr/2025 12:15:28] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 12:15:29,314 - INFO - 127.0.0.1 - - [12/Apr/2025 12:15:29] "GET / HTTP/1.1" 200 -
+2025-04-12 13:18:18,572 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.28.128.187:5000
+2025-04-12 13:18:18,572 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-12 13:18:18,574 - INFO -  * Restarting with stat
+2025-04-12 13:18:19,109 - WARNING -  * Debugger is active!
+2025-04-12 13:18:19,113 - INFO -  * Debugger PIN: 112-565-363
+2025-04-12 13:18:36,433 - INFO - 127.0.0.1 - - [12/Apr/2025 13:18:36] "GET / HTTP/1.1" 200 -
+2025-04-12 13:18:41,987 - INFO - 127.0.0.1 - - [12/Apr/2025 13:18:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 13:18:42,311 - INFO - 127.0.0.1 - - [12/Apr/2025 13:18:42] "GET / HTTP/1.1" 200 -
+2025-04-12 13:18:47,984 - INFO - 127.0.0.1 - - [12/Apr/2025 13:18:47] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 13:18:47,999 - INFO - 127.0.0.1 - - [12/Apr/2025 13:18:47] "GET / HTTP/1.1" 200 -
+2025-04-12 13:18:53,979 - INFO - 127.0.0.1 - - [12/Apr/2025 13:18:53] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 13:18:54,308 - INFO - 127.0.0.1 - - [12/Apr/2025 13:18:54] "GET / HTTP/1.1" 200 -
+2025-04-12 13:18:59,984 - INFO - 127.0.0.1 - - [12/Apr/2025 13:18:59] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 13:18:59,999 - INFO - 127.0.0.1 - - [12/Apr/2025 13:18:59] "GET / HTTP/1.1" 200 -
+2025-04-12 13:19:05,990 - INFO - 127.0.0.1 - - [12/Apr/2025 13:19:05] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 13:19:06,322 - INFO - 127.0.0.1 - - [12/Apr/2025 13:19:06] "GET / HTTP/1.1" 200 -
+2025-04-12 13:19:11,982 - INFO - 127.0.0.1 - - [12/Apr/2025 13:19:11] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 13:19:11,995 - INFO - 127.0.0.1 - - [12/Apr/2025 13:19:11] "GET / HTTP/1.1" 200 -
+2025-04-12 13:19:17,987 - INFO - 127.0.0.1 - - [12/Apr/2025 13:19:17] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 13:19:18,312 - INFO - 127.0.0.1 - - [12/Apr/2025 13:19:18] "GET / HTTP/1.1" 200 -
+2025-04-12 13:19:23,985 - INFO - 127.0.0.1 - - [12/Apr/2025 13:19:23] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 13:19:24,003 - INFO - 127.0.0.1 - - [12/Apr/2025 13:19:24] "GET / HTTP/1.1" 200 -
+2025-04-12 13:19:29,979 - INFO - 127.0.0.1 - - [12/Apr/2025 13:19:29] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 13:19:30,304 - INFO - 127.0.0.1 - - [12/Apr/2025 13:19:30] "GET / HTTP/1.1" 200 -
+2025-04-12 13:19:35,985 - INFO - 127.0.0.1 - - [12/Apr/2025 13:19:35] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 13:19:36,003 - INFO - 127.0.0.1 - - [12/Apr/2025 13:19:36] "GET / HTTP/1.1" 200 -
+2025-04-12 13:19:41,981 - INFO - 127.0.0.1 - - [12/Apr/2025 13:19:41] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 13:19:42,310 - INFO - 127.0.0.1 - - [12/Apr/2025 13:19:42] "GET / HTTP/1.1" 200 -
+2025-04-12 13:19:47,991 - INFO - 127.0.0.1 - - [12/Apr/2025 13:19:47] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 13:19:48,003 - INFO - 127.0.0.1 - - [12/Apr/2025 13:19:48] "GET / HTTP/1.1" 200 -
+2025-04-12 13:19:53,984 - INFO - 127.0.0.1 - - [12/Apr/2025 13:19:53] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 13:19:54,314 - INFO - 127.0.0.1 - - [12/Apr/2025 13:19:54] "GET / HTTP/1.1" 200 -
+2025-04-12 13:19:59,978 - INFO - 127.0.0.1 - - [12/Apr/2025 13:19:59] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 13:19:59,991 - INFO - 127.0.0.1 - - [12/Apr/2025 13:19:59] "GET / HTTP/1.1" 200 -
+2025-04-12 13:20:05,985 - INFO - 127.0.0.1 - - [12/Apr/2025 13:20:05] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 13:20:06,307 - INFO - 127.0.0.1 - - [12/Apr/2025 13:20:06] "GET / HTTP/1.1" 200 -
+2025-04-12 13:20:11,979 - INFO - 127.0.0.1 - - [12/Apr/2025 13:20:11] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 13:20:11,996 - INFO - 127.0.0.1 - - [12/Apr/2025 13:20:11] "GET / HTTP/1.1" 200 -
+2025-04-12 13:20:17,065 - INFO - 127.0.0.1 - - [12/Apr/2025 13:20:17] "GET /get_status HTTP/1.1" 200 -
+2025-04-12 13:20:17,394 - INFO - 127.0.0.1 - - [12/Apr/2025 13:20:17] "GET / HTTP/1.1" 200 -

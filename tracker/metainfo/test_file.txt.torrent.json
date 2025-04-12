@@ -1,0 +1,13 @@
+{
+  "name": "test_file.txt",
+  "piece_length": 524288,
+  "piece_count": 1,
+  "files": [
+    {
+      "path": "test_file.txt",
+      "length": 35
+    }
+  ],
+  "tracker": "http://localhost:8000",
+  "info_hash": "c461b34d23330852f818ee582061262d26009abb"
+}
